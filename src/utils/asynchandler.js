@@ -1,9 +1,22 @@
 
 const asyncHanlder = (requsestHandeler) => {
-    (req, res, next) => {
+    return async(req, res, next) => {
         Promise.resolve(requsestHandeler(req, res, next)).catch((err) => next(err))
     }
 }
+
+// const asyncHanlder = (requestHandler) => {
+//     return async (req, res, next) => {
+//         try {
+//             await requestHandler(req, res, next);
+//         } catch (error) {
+//             next(error); // Pass the error to the next middleware
+//         }
+//     };
+// };
+
+export { asyncHanlder };
+
 
 
 
@@ -20,4 +33,3 @@ const asyncHanlder = (requsestHandeler) => {
 //     }
 // }
 
-export { asyncHanlder }
