@@ -1,6 +1,6 @@
 
 const asyncHanlder = (requsestHandeler) => {
-    return async(req, res, next) => {
+    return async (req, res, next) => {
         Promise.resolve(requsestHandeler(req, res, next)).catch((err) => next(err))
     }
 }

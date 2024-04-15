@@ -7,12 +7,12 @@ dotenv.config({
 })
 
 connectDB()
-.then(()=>{
-    app.listen(process.env.PORT || 4000,()=>{
-        console.log(`server is running on ${process.env.PORT}`)
+    .then(() => {
+        app.listen(process.env.PORT || 4000, () => {
+            console.log(`server is running on ${process.env.PORT}`)
+        })
     })
-})
-.catch(err => console.log(err))
+    .catch(err => console.log(err))
 // import mongoose from "mongoose";
 // import { DB_Name } from "./constant";
 
